@@ -1,0 +1,19 @@
+
+.container{
+  height: 500px;
+  width: 500px;
+  border: 1px solid #000;
+  color: red;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-columns:1fr 1fr 1fr 1fr ;
+  gap:10px 10px;
+
+}
+
+.output-field{
+  border: 5px solid red;
+grid-column-start:1;
+grid-column-end:5;
+}
+
