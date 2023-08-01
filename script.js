@@ -47,35 +47,26 @@ function evaluateSum() {
   //if the user presses = sign, it should calculate the sum
   firstNumber = parseInt(firstNumber);
   userInput = parseInt(userInput);
-  if (evaluatedOperation === "+") {
-    sum = +firstNumber + +userInput;
-    console.log(sum);
-    outputField.textContent = sum;
-    userInput = sum;
-    return sum;
+
+  switch (evaluatedOperation) {
+    case "+":
+      sum = firstNumber + userInput;
+      break;
+    case "-":
+      sum = firstNumber - userInput;
+      break;
+    case "*":
+      sum = firstNumber * userInput;
+      break;
+    case "/":
+      sum = firstNumber / userInput;
+      break;
+    default:
+      console.log("Invalid operation");
   }
 
-  if (evaluatedOperation === "-") {
-    sum = +firstNumber - +userInput;
-    console.log(sum);
-    outputField.textContent = sum;
-    userInput = sum;
-    return sum;
-  }
-
-  if (evaluatedOperation === "*") {
-    sum = +firstNumber * +userInput;
-    console.log(sum);
-    outputField.textContent = sum;
-    userInput = sum;
-    return sum;
-  }
-
-  if (evaluatedOperation === "/") {
-    sum = +firstNumber / +userInput;
-    console.log(sum);
-    outputField.textContent = sum;
-    userInput = sum;
-    return sum;
-  }
+  console.log(sum);
+  outputField.textContent = sum;
+  userInput = sum;
+  return sum;
 }
