@@ -1,6 +1,7 @@
 const numbers = document.querySelectorAll("[data-number]");
 const outputField = document.querySelector(".output-field");
 const evaluate = document.querySelector(".equal");
+const clearbtn = document.querySelector(".clear");
 
 let userInput = 0;
 let currentOperation;
@@ -9,6 +10,7 @@ let firstNumber;
 let sum;
 
 numbers.forEach((number) => number.addEventListener("click", getNumber));
+clearbtn.addEventListener("click", clearEverything);
 
 const operations = document.querySelectorAll(".operation");
 operations.forEach((operation) => operation.addEventListener("click", getSum));
@@ -69,4 +71,11 @@ function evaluateSum() {
   outputField.textContent = sum;
   userInput = sum;
   return sum;
+}
+function clearEverything() {
+  userInput = 0;
+  currentOperation = "";
+  evaluatedOperation = "";
+  firstNumber = 0;
+  outputField.textContent = "";
 }
