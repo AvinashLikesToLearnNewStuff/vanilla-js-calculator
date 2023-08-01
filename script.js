@@ -10,8 +10,8 @@ let sum;
 
 numbers.forEach((number) => number.addEventListener("click", getNumber));
 
-const operation = document.querySelector(".operation");
-operation.addEventListener("click", getSum);
+const operations = document.querySelectorAll(".operation");
+operations.forEach((operation) => operation.addEventListener("click", getSum));
 
 function getNumber(number) {
   if (!currentOperation) {
@@ -43,11 +43,39 @@ function getSum(Sum) {
 evaluate.addEventListener("click", evaluateSum);
 
 function evaluateSum() {
-  console.log(`${firstNumber}+${evaluatedOperation}+${userInput}`);
+  console.log(`${firstNumber}${evaluatedOperation}${userInput}`);
   //if the user presses = sign, it should calculate the sum
   firstNumber = parseInt(firstNumber);
-  userInput = parseInt(firstNumber);
-  evaluatedOperation = parseInt(firstNumber);
-  sum = +firstNumber + evaluatedOperation + +userInput;
-  return sum;
+  userInput = parseInt(userInput);
+  if (evaluatedOperation === "+") {
+    sum = +firstNumber + +userInput;
+    console.log(sum);
+    outputField.textContent = sum;
+    userInput = sum;
+    return sum;
+  }
+
+  if (evaluatedOperation === "-") {
+    sum = +firstNumber - +userInput;
+    console.log(sum);
+    outputField.textContent = sum;
+    userInput = sum;
+    return sum;
+  }
+
+  if (evaluatedOperation === "*") {
+    sum = +firstNumber * +userInput;
+    console.log(sum);
+    outputField.textContent = sum;
+    userInput = sum;
+    return sum;
+  }
+
+  if (evaluatedOperation === "/") {
+    sum = +firstNumber / +userInput;
+    console.log(sum);
+    outputField.textContent = sum;
+    userInput = sum;
+    return sum;
+  }
 }
