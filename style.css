@@ -1,19 +1,32 @@
 
+*{
+  border: none;
+
+}
+.button{
+  border-radius: 10px;
+}
 .container{
   height: 500px;
   width: 500px;
-  border: 1px solid #000;
-  color: red;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
   grid-template-columns:1fr 1fr 1fr 1fr ;
   gap:10px 10px;
-
+  border: 1px solid black;
+  border-radius:12px ;
 }
 
 .output-field{
-  border: 5px solid red;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+
+  border-radius:12px ;
 grid-column-start:1;
 grid-column-end:5;
 }
+
 
